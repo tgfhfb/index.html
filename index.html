@@ -46,6 +46,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            flex-wrap: wrap;
         }
         
         nav li {
@@ -59,11 +60,15 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             transition: all 0.3s;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
         }
         
         nav a:hover {
             background-color: var(--accent);
             color: var(--dark);
+            transform: scale(1.05);
         }
         
         .container {
@@ -80,6 +85,9 @@
             border-radius: 8px;
             padding: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
         }
         
         .main-content {
@@ -93,11 +101,14 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
         
         .card img {
@@ -107,28 +118,38 @@
         }
         
         .card-content {
-            padding: 1rem;
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .card h3 {
             margin-top: 0;
             color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .card p {
+            flex-grow: 1;
         }
         
         .btn {
             display: inline-block;
             background-color: var(--secondary);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             transition: all 0.3s;
+            text-align: center;
         }
         
         .btn:hover {
             background-color: var(--primary);
+            transform: translateY(-2px);
         }
         
         footer {
@@ -144,6 +165,19 @@
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
             margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        .subcategory {
+            margin-top: 1.5rem;
+        }
+        
+        .subcategory-title {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-right: 0.5rem;
+            border-right: 3px solid var(--primary);
         }
         
         @media (max-width: 768px) {
@@ -158,6 +192,13 @@
             
             nav li {
                 margin: 0.5rem 0;
+                width: 100%;
+            }
+            
+            nav a {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -171,88 +212,125 @@
     
     <nav>
         <ul>
-            <li><a href="https://play.google.com/store" target="_blank">التطبيقات</a></li>
-            <li><a href="https://www.pdfdrive.com/" target="_blank">الكتب</a></li>
-            <li><a href="https://www.aljazeera.net/" target="_blank">الأخبار</a></li>
-            <li><a href="https://islamweb.net/" target="_blank">أمور دينية</a></li>
+            <li><a href="#apps">التطبيقات</a></li>
+            <li><a href="#books">الكتب</a></li>
+            <li><a href="#news">الأخبار</a></li>
+            <li><a href="#religion">أمور دينية</a></li>
             <li><a href="#about">عن الموقع</a></li>
         </ul>
     </nav>
     
     <div class="container">
         <aside class="sidebar">
-            <h2 class="section-title">الأقسام</h2>
-            <ul>
-                <li><a href="https://apkpure.com/" target="_blank">تطبيقات الهاتف</a></li>
-                <li><a href="https://www.noorsa.net/" target="_blank">كتب إلكترونية</a></li>
-                <li><a href="https://www.bbc.com/arabic" target="_blank">أحدث الأخبار</a></li>
-                <li><a href="https://quran.ksu.edu.sa/" target="_blank">تلاوات قرآنية</a></li>
-                <li><a href="https://ar.islamway.net/" target="_blank">محاضرات دينية</a></li>
-                <li><a href="https://www.tech-wd.com/" target="_blank">تكنولوجيا</a></li>
-                <li><a href="https://www.webteb.com/" target="_blank">صحة وطب</a></li>
-            </ul>
+            <h2 class="section-title">تصفح حسب التصنيف</h2>
             
-            <h2 class="section-title">أكثر الكتب تحميلاً</h2>
-            <ol>
-                <li><a href="https://www.pdfdrive.com/the-subtle-art-of-not-giving-a-f-ck-e176041996.html" target="_blank">فن اللامبالاة</a></li>
-                <li><a href="https://www.pdfdrive.com/atomic-habits-e158891092.html" target="_blank">العادات الذرية</a></li>
-                <li><a href="https://www.altafsir.com/" target="_blank">تفسير القرآن الكريم</a></li>
-                <li><a href="https://shamela.ws/book/23569" target="_blank">أصول الفقه</a></li>
-            </ol>
+            <div class="subcategory">
+                <h3 class="subcategory-title">التطبيقات</h3>
+                <ul>
+                    <li><a href="https://play.google.com/store" target="_blank">تطبيقات أندرويد</a></li>
+                    <li><a href="https://www.apple.com/ios/app-store/" target="_blank">تطبيقات آيفون</a></li>
+                    <li><a href="https://apkpure.com/" target="_blank">تطبيقات منتجة</a></li>
+                    <li><a href="https://www.microsoft.com/store/apps" target="_blank">تطبيقات ويندوز</a></li>
+                </ul>
+            </div>
+            
+            <div class="subcategory">
+                <h3 class="subcategory-title">الكتب</h3>
+                <ul>
+                    <li><a href="https://www.pdfdrive.com/" target="_blank">كتب إلكترونية</a></li>
+                    <li><a href="https://www.noorsa.net" target="_blank">كتب عربية</a></li>
+                    <li><a href="https://www.goodreads.com/" target="_blank">كتب عالمية</a></li>
+                    <li><a href="https://www.scribd.com/" target="_blank">كتب متنوعة</a></li>
+                </ul>
+            </div>
+            
+            <div class="subcategory">
+                <h3 class="subcategory-title">الأخبار</h3>
+                <ul>
+                    <li><a href="https://www.aljazeera.net/" target="_blank">أخبار عربية</a></li>
+                    <li><a href="https://www.bbc.com/arabic" target="_blank">أخبار عالمية</a></li>
+                    <li><a href="https://www.cnbcarabia.com/" target="_blank">أخبار اقتصادية</a></li>
+                    <li><a href="https://www.tech-wd.com/" target="_blank">أخبار تقنية</a></li>
+                </ul>
+            </div>
         </aside>
         
         <main class="main-content">
-            <article class="card">
+            <!-- قسم التطبيقات -->
+            <article class="card" id="apps">
                 <img src="https://via.placeholder.com/300x180/4ECDC4/FFFFFF?text=التطبيقات" alt="التطبيقات">
                 <div class="card-content">
                     <h3>أفضل التطبيقات لهذا الأسبوع</h3>
                     <p>تعرف على أحدث التطبيقات المفيدة لزيادة الإنتاجية وتنظيم الوقت.</p>
-                    <a href="https://www.appsapk.com/best-apps/" class="btn" target="_blank">تحميل التطبيقات</a>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store" class="btn" target="_blank">تطبيقات أندرويد</a>
+                        <a href="https://www.apple.com/ios/app-store/" class="btn" target="_blank">تطبيقات آيفون</a>
+                    </div>
                 </div>
             </article>
             
-            <article class="card">
+            <!-- قسم الكتب -->
+            <article class="card" id="books">
                 <img src="https://via.placeholder.com/300x180/FF6B6B/FFFFFF?text=الكتب" alt="الكتب">
                 <div class="card-content">
                     <h3>مكتبة الكرافي للكتب</h3>
                     <p>آلاف الكتب في مختلف المجالات متاحة للتحميل المجاني.</p>
-                    <a href="https://www.pdfdrive.com/" class="btn" target="_blank">استكشاف الكتب</a>
+                    <div class="book-links">
+                        <a href="https://www.pdfdrive.com/" class="btn" target="_blank">كتب إلكترونية</a>
+                        <a href="https://www.noorsa.net/" class="btn" target="_blank">كتب عربية</a>
+                    </div>
                 </div>
             </article>
             
-            <article class="card">
+            <!-- قسم الأخبار -->
+            <article class="card" id="news">
                 <img src="https://via.placeholder.com/300x180/FFE66D/000000?text=الأخبار" alt="الأخبار">
                 <div class="card-content">
                     <h3>أهم الأخبار اليوم</h3>
                     <p>تغطية شاملة لأهم الأحداث المحلية والعالمية.</p>
-                    <a href="https://www.skynewsarabia.com/" class="btn" target="_blank">قراءة الأخبار</a>
+                    <div class="news-links">
+                        <a href="https://www.aljazeera.net/" class="btn" target="_blank">أخبار عربية</a>
+                        <a href="https://www.bbc.com/arabic" class="btn" target="_blank">أخبار عالمية</a>
+                    </div>
                 </div>
             </article>
             
-            <article class="card">
+            <!-- قسم الأمور الدينية -->
+            <article class="card" id="religion">
                 <img src="https://via.placeholder.com/300x180/292F36/FFFFFF?text=أمور+دينية" alt="أمور دينية">
                 <div class="card-content">
                     <h3>باقة دينية متنوعة</h3>
                     <p>فتاوى، دروس، محاضرات، وتلاوات قرآنية بصوت أشهر القراء.</p>
-                    <a href="https://ar.islamway.net/" class="btn" target="_blank">الدخول للقسم</a>
+                    <div class="religion-links">
+                        <a href="https://quran.ksu.edu.sa/" class="btn" target="_blank">تلاوات قرآنية</a>
+                        <a href="https://ar.islamway.net/" class="btn" target="_blank">محاضرات دينية</a>
+                    </div>
                 </div>
             </article>
             
+            <!-- قسم التقنية -->
             <article class="card">
                 <img src="https://via.placeholder.com/300x180/4ECDC4/FFFFFF?text=التكنولوجيا" alt="التكنولوجيا">
                 <div class="card-content">
                     <h3>أحدث التقنيات</h3>
                     <p>آخر المستجدات في عالم التكنولوجيا والذكاء الاصطناعي.</p>
-                    <a href="https://www.tech-wd.com/" class="btn" target="_blank">قراءة المزيد</a>
+                    <div class="tech-links">
+                        <a href="https://www.tech-wd.com/" class="btn" target="_blank">أخبار تقنية</a>
+                        <a href="https://www.engadget.com/" class="btn" target="_blank">مراجعات أجهزة</a>
+                    </div>
                 </div>
             </article>
             
+            <!-- قسم الصحة -->
             <article class="card">
                 <img src="https://via.placeholder.com/300x180/FF6B6B/FFFFFF?text=الصحة" alt="الصحة">
                 <div class="card-content">
                     <h3>نصائح صحية</h3>
                     <p>مقالات ونصائح طبية لتعزيز الصحة والوقاية من الأمراض.</p>
-                    <a href="https://www.webteb.com/" class="btn" target="_blank">استكشف القسم</a>
+                    <div class="health-links">
+                        <a href="https://www.webteb.com/" class="btn" target="_blank">مقالات طبية</a>
+                        <a href="https://www.altibbi.com/" class="btn" target="_blank">استشارات طبية</a>
+                    </div>
                 </div>
             </article>
         </main>
