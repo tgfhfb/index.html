@@ -1,236 +1,271 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>أهلابيك في موقع مصطفى الكرافي</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      direction: rtl;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #008080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .marquee {
-      background-color: #004d4d;
-      color: #fff;
-      padding: 8px 0;
-      font-weight: bold;
-      overflow: hidden;
-    }
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 15s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    nav {
-      background-color: #006666;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 12px 0;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #004d4d;
-    }
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .card {
-      background-color: white;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .card h2 {
-      color: #008080;
-      margin-bottom: 10px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 20px;
-      background-color: #008080;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #005959;
-    }
-    .tools-section {
-      max-width: 900px;
-      margin: 40px auto 20px;
-      padding: 0 20px;
-    }
-    .tools-section h2 {
-      text-align: center;
-      color: #007070;
-      margin-bottom: 25px;
-    }
-    .tool-link {
-      background-color: #e0f2f2;
-      margin: 10px auto;
-      padding: 15px 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      font-weight: bold;
-      color: #004d4d;
-      text-decoration: none;
-      display: block;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 0 8px rgba(0,128,128,0.1);
-    }
-    .tool-link:hover {
-      background-color: #b2dfdb;
-    }
-    footer {
-      background-color: #ddd;
-      padding: 15px 10px;
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-    }
-    .social-links {
-      margin-top: 10px;
-    }
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #008080;
-      font-weight: bold;
-    }
-    .social-links a:hover {
-      color: #004d4d;
-    }
-    .form-box {
-      background-color: white;
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .form-box h3 {
-      color: #006666;
-    }
-    .form-box input {
-      width: 90%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    .form-box a {
-      display: inline-block;
-      margin-top: 15px;
-      background-color: #008080;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    iframe {
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكرافي - بوابة المعرفة والثقافة</title>
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #292F36;
+            --light: #F7FFF7;
+        }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1rem;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-  <h1>أهلابيك في موقع مصطفى الكرافي</h1>
-  <p>شروحات - تطبيقات - أدوات</p>
-</header>
-
-<div class="marquee">
-  <span>مرحبًا بك في موقع مصطفى الكرافي! أفضل الأدوات والشروحات التقنية بانتظارك. استمتع بالتصفح! 🎉</span>
-</div>
-
-<nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="https://www.mustafa-tech.com/tutorials" target="_blank">شروحات</a>
-  <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically" target="_blank">تطبيقات</a>
-  <a href="https://www.online-toolz.com/tools/" target="_blank">أدوات</a>
-  <a href="https://t.me/Must12548" target="_blank">اتصل بنا (تلغرام)</a>
-</nav>
-
-<main>
-  <div class="card">
-    <h2>شرح: تحويل PDF إلى Word</h2>
-    <p>شرح مبسط لأفضل أداة لتحويل ملفات PDF إلى Word بسهولة ودون برامج معقدة.</p>
-    <a href="https://www.ilovepdf.com/pdf_to_word" target="_blank" class="btn">اقرأ الشرح</a>
-  </div>
-
-  <div class="card">
-    <h2>تحميل تطبيق تيك توك لايت</h2>
-    <p>رابط مباشر لتحميل تطبيق تيك توك لايت لجميع الأجهزة بسرعة وأمان.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically" target="_blank" class="btn">تحميل الآن</a>
-  </div>
-
-  <div class="card">
-    <h2>أداة: ضغط الصور أونلاين</h2>
-    <p>أداة سهلة تساعدك على تقليل حجم الصور بدون فقدان الجودة، مثالية لمشاركة أسرع.</p>
-    <a href="https://compressjpeg.com/ar/" target="_blank" class="btn">جرب الأداة</a>
-  </div>
-
-  <section class="tools-section">
-    <h2>🎥 بث مباريات الدوريات الأوروبية</h2>
-    <iframe src="https://www.yallashooot.io/home4/" loading="lazy" width="100%" height="600px" allowfullscreen></iframe>
-    <p style="text-align: center; margin-top: 10px;">
-      <a href="https://www.yallashooot.io/home4/" target="_blank">⚽ افتح البث في نافذة جديدة</a>
-    </p>
-  </section>
-</main>
-
-<section class="form-box">
-  <h3>لديك استفسار؟</h3>
-  <p>أدخل سؤالك وسنوجهك للتواصل عبر تلغرام</p>
-  <input type="text" placeholder="اكتب سؤالك هنا..." />
-  <br />
-  <a href="https://t.me/Must12548" target="_blank">📩 أرسل الاستفسار عبر تلغرام</a>
-</section>
-
-<footer>
-  <p>© 2025 موقع مصطفى الكرافي. جميع الحقوق محفوظة.</p>
-  <div class="social-links">
-    <a href="https://t.me/Must12548" target="_blank">تلغرام: @Must12548</a>
-  </div>
-</footer>
-
+    <header>
+        <div class="logo">الكرافي</div>
+        <p>بوابة المعرفة والثقافة الشاملة</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="https://play.google.com/store" target="_blank">التطبيقات</a></li>
+            <li><a href="https://www.pdfdrive.com/" target="_blank">الكتب</a></li>
+            <li><a href="https://www.aljazeera.net/" target="_blank">الأخبار</a></li>
+            <li><a href="https://islamweb.net/" target="_blank">أمور دينية</a></li>
+            <li><a href="#about">عن الموقع</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="section-title">الأقسام</h2>
+            <ul>
+                <li><a href="https://apkpure.com/" target="_blank">تطبيقات الهاتف</a></li>
+                <li><a href="https://www.noorsa.net/" target="_blank">كتب إلكترونية</a></li>
+                <li><a href="https://www.bbc.com/arabic" target="_blank">أحدث الأخبار</a></li>
+                <li><a href="https://quran.ksu.edu.sa/" target="_blank">تلاوات قرآنية</a></li>
+                <li><a href="https://ar.islamway.net/" target="_blank">محاضرات دينية</a></li>
+                <li><a href="https://www.tech-wd.com/" target="_blank">تكنولوجيا</a></li>
+                <li><a href="https://www.webteb.com/" target="_blank">صحة وطب</a></li>
+            </ul>
+            
+            <h2 class="section-title">أكثر الكتب تحميلاً</h2>
+            <ol>
+                <li><a href="https://www.pdfdrive.com/the-subtle-art-of-not-giving-a-f-ck-e176041996.html" target="_blank">فن اللامبالاة</a></li>
+                <li><a href="https://www.pdfdrive.com/atomic-habits-e158891092.html" target="_blank">العادات الذرية</a></li>
+                <li><a href="https://www.altafsir.com/" target="_blank">تفسير القرآن الكريم</a></li>
+                <li><a href="https://shamela.ws/book/23569" target="_blank">أصول الفقه</a></li>
+            </ol>
+        </aside>
+        
+        <main class="main-content">
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/4ECDC4/FFFFFF?text=التطبيقات" alt="التطبيقات">
+                <div class="card-content">
+                    <h3>أفضل التطبيقات لهذا الأسبوع</h3>
+                    <p>تعرف على أحدث التطبيقات المفيدة لزيادة الإنتاجية وتنظيم الوقت.</p>
+                    <a href="https://www.appsapk.com/best-apps/" class="btn" target="_blank">تحميل التطبيقات</a>
+                </div>
+            </article>
+            
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/FF6B6B/FFFFFF?text=الكتب" alt="الكتب">
+                <div class="card-content">
+                    <h3>مكتبة الكرافي للكتب</h3>
+                    <p>آلاف الكتب في مختلف المجالات متاحة للتحميل المجاني.</p>
+                    <a href="https://www.pdfdrive.com/" class="btn" target="_blank">استكشاف الكتب</a>
+                </div>
+            </article>
+            
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/FFE66D/000000?text=الأخبار" alt="الأخبار">
+                <div class="card-content">
+                    <h3>أهم الأخبار اليوم</h3>
+                    <p>تغطية شاملة لأهم الأحداث المحلية والعالمية.</p>
+                    <a href="https://www.skynewsarabia.com/" class="btn" target="_blank">قراءة الأخبار</a>
+                </div>
+            </article>
+            
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/292F36/FFFFFF?text=أمور+دينية" alt="أمور دينية">
+                <div class="card-content">
+                    <h3>باقة دينية متنوعة</h3>
+                    <p>فتاوى، دروس، محاضرات، وتلاوات قرآنية بصوت أشهر القراء.</p>
+                    <a href="https://ar.islamway.net/" class="btn" target="_blank">الدخول للقسم</a>
+                </div>
+            </article>
+            
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/4ECDC4/FFFFFF?text=التكنولوجيا" alt="التكنولوجيا">
+                <div class="card-content">
+                    <h3>أحدث التقنيات</h3>
+                    <p>آخر المستجدات في عالم التكنولوجيا والذكاء الاصطناعي.</p>
+                    <a href="https://www.tech-wd.com/" class="btn" target="_blank">قراءة المزيد</a>
+                </div>
+            </article>
+            
+            <article class="card">
+                <img src="https://via.placeholder.com/300x180/FF6B6B/FFFFFF?text=الصحة" alt="الصحة">
+                <div class="card-content">
+                    <h3>نصائح صحية</h3>
+                    <p>مقالات ونصائح طبية لتعزيز الصحة والوقاية من الأمراض.</p>
+                    <a href="https://www.webteb.com/" class="btn" target="_blank">استكشف القسم</a>
+                </div>
+            </article>
+        </main>
+    </div>
+    
+    <footer id="about">
+        <p>جميع الحقوق محفوظة &copy; 2023 موقع الكرافي</p>
+        <p>تواصل معنا: <a href="mailto:info@alkurafi.com" style="color: var(--accent);">info@alkurafi.com</a></p>
+        <div>
+            <a href="privacy.html" style="color: white; margin: 0 0.5rem;">سياسة الخصوصية</a> | 
+            <a href="terms.html" style="color: white; margin: 0 0.5rem;">شروط الاستخدام</a> | 
+            <a href="about.html" style="color: white; margin: 0 0.5rem;">عن الموقع</a>
+        </div>
+    </footer>
 </body>
 </html>
